@@ -9,8 +9,10 @@ Added basic "Hello World!!" message and deployed website to github using the ins
 
 ============
 22/10/23 Added basic message using HTML - Codecademy "Getting started with HTML"
-<<<<<<< HEAD
+
 ============
 Used learning from Codecademy "Getting started with HTML" to update the wesbite
-=======
+
+============
+02/11/23 Added internal and external links to main page - Codecademy "Fundmentals of HTML"
 
