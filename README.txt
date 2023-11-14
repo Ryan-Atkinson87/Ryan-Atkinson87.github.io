@@ -16,3 +16,5 @@ Used learning from Codecademy "Getting started with HTML" to update the wesbite
 ============
 02/11/23 Added internal and external links to main page - Codecademy "Fundmentals of HTML"
 
+============
+14/11/23 Adapted website to incorporate Semantic HTML - Codecademy "Fundamentals of HTML"
