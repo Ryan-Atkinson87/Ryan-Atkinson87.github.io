@@ -18,3 +18,7 @@ Used learning from Codecademy "Getting started with HTML" to update the wesbite
 
 ============
 14/11/23 Adapted website to incorporate Semantic HTML - Codecademy "Fundamentals of HTML"
+
+============
+29/12/23 Sporadic learning on codecademy, last 2 days have been working through HTML and CSS things
+Updated website with links positioned around the page using box method
