@@ -48,6 +48,8 @@ header {
     margin: 0 auto;
     position: relative;
     top: 150px;
+    left: 0;
+    right: 0;
 }
 
 .link-box {
