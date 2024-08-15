@@ -22,3 +22,8 @@ Used learning from Codecademy "Getting started with HTML" to update the wesbite
 ============
 29/12/23 Sporadic learning on codecademy, last 2 days have been working through HTML and CSS things
 Updated website with links positioned around the page using box method
+
+============
+15/04/24 It's been a long time since the last update as I was working through 2 modules with my Open Uni course
+Gutted the site and adjusted it to use a display: grid layout
+Some work to do on the other pages on the site
