@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Some Squirrels</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dev Diary | Squirrels</title>
     <link href="./resources/css/style.css" rel="stylesheet" />
     <link href="./resources/css/squirrels.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <ul class="nav-list">
-        <li class="nav"><a href="./index.html">Home</a></li>
-        <li class="nav"><a href="./linked_to.html">Internal Link</a></li>
-        <li class="nav"><a href="./squirrels.html">Some Squirrels</a></li>
-        <li class="nav">
-          <a href="https://github.com/Ryan-Atkinson87?tab=repositories"
-            >External link</a
-          >
-        </li>
-      </ul>
-    </header>
-    <main>
-      <section>
-        <article class="introduction">
-          <p>
-            Work in progress
-          </p>
-        </article>
-        <article class="link-box">
-          <a class="link" href="./index.html">Return to main page</a>
-        </article>
-      </section>
-    </main>
+    <div class="container">
+      <header class="header">
+        <h1>Everybody like squirrels!</h1>
+      </header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./linked_to.html">Internal Link</a></li>
+          <li><a href="./squirrels.html" class="active">Some Squirrels</a></li>
+          <li>
+            <a
+              href="https://github.com/Ryan-Atkinson87?tab=repositories"
+              target="_blank"
+              >My GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <p>I've used a grid display to show these images</p>
+        <p>I've used the @media query to change the columns for smaller screens such as mobile browsers</p>
+        <div class="image-grid">
+          <img
+            src="https://photos.smugmug.com/Seasons/Winter-2024/i-D7SWvJN/0/NGDfMkFGvkxMkZCCw4v2KKWZJrjHV4crF8GnFZ3BS/XL/_LRTRV3110-XL.jpg"
+            alt="Squirrel from the side"
+          />
+          <img
+            src="https://photos.smugmug.com/Seasons/Winter-2024/i-2bMBqjv/0/LvnRZtjpB46fk6sG3D2MRBXkSwMbbGMDkbS7rfKKT/XL/_LRTRV3111-XL.jpg"
+            alt="Squirrel from the front"
+          />
+          <img
+            src="https://photos.smugmug.com/Seasons/Winter-2024/i-J99p5ML/0/MtvRHXmWKddCvNkF6ZvbcSzsWdxGVH8jWSw6fTcjR/XL/_LRTRV3113-XL.jpg"
+            alt="Squirrel diagnal shot"
+          />
+          <img
+            src="https://photos.smugmug.com/Seasons/Winter-2024/i-D7SWvJN/0/NGDfMkFGvkxMkZCCw4v2KKWZJrjHV4crF8GnFZ3BS/XL/_LRTRV3110-XL.jpg"
+            alt="Squirrel from the side"
+          />
+          <img
+            src="https://photos.smugmug.com/Seasons/Winter-2024/i-2bMBqjv/0/LvnRZtjpB46fk6sG3D2MRBXkSwMbbGMDkbS7rfKKT/XL/_LRTRV3111-XL.jpg"
+            alt="Squirrel from the front"
+          />
+          <img
+            src="https://photos.smugmug.com/Seasons/Winter-2024/i-J99p5ML/0/MtvRHXmWKddCvNkF6ZvbcSzsWdxGVH8jWSw6fTcjR/XL/_LRTRV3113-XL.jpg"
+            alt="Squirrel diagnal shot"
+          />
+        </div>
+      </main>
+      <footer class="footer">
+        <h3>Hope you enjoyed :D</h3>
+        <a class="link" href="./index.html">Return to main page</a>
+      </footer>
+    </div>
   </body>
 </html>

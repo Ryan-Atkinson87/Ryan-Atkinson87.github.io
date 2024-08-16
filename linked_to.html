@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Practise link</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dev Diary | Internal</title>
     <link href="./resources/css/style.css" rel="stylesheet" />
+    <link href="./resources/css/internal.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <ul class="nav-list">
-        <li class="nav"><a href="./index.html">Home</a></li>
-        <li class="nav"><a href="./linked_to.html">Internal Link</a></li>
-        <li class="nav"><a href="./squirrels.html">Some Squirrels</a></li>
-        <li class="nav">
-          <a href="https://github.com/Ryan-Atkinson87?tab=repositories"
-            >External link</a
-          >
-        </li>
-      </ul>
-      <h1>Work in progress</h1>
-    </header>
-    <main>
-      <section>
-        <article class="introduction">
-          <p>
-            I just added this page in order to get a working link in my webpage
-          </p>
-        </article>
-        <article class="link-box">
-          <a class="link" href="./index.html">Return to main page</a>
-        </article>
-      </section>
+    <div class="container">
+      <header class="header">
+        <h1>Internal Link</h1>
+      </header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./linked_to.html" class="active">Internal Link</a></li>
+          <li><a href="./squirrels.html">Some Squirrels</a></li>
+          <li>
+            <a
+              href="https://github.com/Ryan-Atkinson87?tab=repositories"
+              target="_blank"
+              >My GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+    <main class="main-content">
+      <p>I just added this page in order to get a working link in my webpage</p>
     </main>
+    <footer class="footer">
+      <h3>Hope you enjoyed :D</h3>
+      <a class="link" href="./index.html">Return to main page</a>
+    </footer>
   </body>
 </html>

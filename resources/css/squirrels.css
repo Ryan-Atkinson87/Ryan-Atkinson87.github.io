@@ -1,0 +1,32 @@
+.xcontainer {
+  background-image: url("https://photos.smugmug.com/Seasons/Winter-2024/i-kRNsZmg/0/LHFNNB456PzjG45gPbG599W3HgjnLPJ6dX2PQ4WTb/XL/_LRTRV3105-XL.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    }
+}
+
+.image-grid img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+p {
+    margin: 10px;
+}
