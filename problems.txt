@@ -1,0 +1,3 @@
+- nav items don't scale right on smaller screens.
+
+- no need for the internal link page anymore

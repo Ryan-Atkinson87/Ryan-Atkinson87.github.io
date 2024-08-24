@@ -1,16 +1,9 @@
-.xcontainer {
-  background-image: url("https://photos.smugmug.com/Seasons/Winter-2024/i-kRNsZmg/0/LHFNNB456PzjG45gPbG599W3HgjnLPJ6dX2PQ4WTb/XL/_LRTRV3105-XL.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: top center;
-}
-
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 10px;
-  margin-bottom: 100px;
+  margin: 0 10px 100px 10px;
 }
 
 @media (max-width: 768px) {
