@@ -1,3 +1,5 @@
 - nav items don't scale right on smaller screens.
 
 - no need for the internal link page anymore
+
+- number guesser logic doesn't seem right, "Next Round" button doesn't always function as should

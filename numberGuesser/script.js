@@ -15,11 +15,11 @@ function generateTarget() {
 // returns true if user wins
 function compareGuesses(userGuess, computerGuess, secretTarget) {
     let userAway = secretTarget - userGuess;
-    const computerAway = secretTarget - computerGuess;
+    let computerAway = secretTarget - computerGuess;
     if (userAway < 0) {
         userAway = userAway * -1;
     }
-    if (computerAway < 0) {
+    if (computerAway <= -1) {
         computerAway = computerAway * -1;
     }
     if (userAway <= computerAway) {
@@ -29,8 +29,8 @@ function compareGuesses(userGuess, computerGuess, secretTarget) {
     }
 }
 
-// Test compareGuesses:
-// console.log(compareGuesses(3, 4, 4));
+//Test compareGuesses:
+// console.log(compareGuesses(5, 8, 5));
 
 // takes param string representing winner
 // increases the score variables humanScore, computerScore

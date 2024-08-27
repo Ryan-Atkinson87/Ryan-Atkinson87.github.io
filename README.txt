@@ -27,3 +27,7 @@ Updated website with links positioned around the page using box method
 15/04/24 It's been a long time since the last update as I was working through 2 modules with my Open Uni course
 Gutted the site and adjusted it to use a display: grid layout
 Some work to do on the other pages on the site
+
+============
+27/08/24 Added javascript number guessing game and fixed a typeError bug in script.js that was causing the game not to run
+when the computer guess was less than the user guess
