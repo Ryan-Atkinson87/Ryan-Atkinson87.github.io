@@ -31,3 +31,6 @@ Some work to do on the other pages on the site
 ============
 27/08/24 Added javascript number guessing game and fixed a typeError bug in script.js that was causing the game not to run
 when the computer guess was less than the user guess
+
+============
+02/09/24 Added a page as a placeholder for the quote of the day generator I shall be adding
