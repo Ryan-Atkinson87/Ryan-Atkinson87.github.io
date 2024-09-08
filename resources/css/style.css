@@ -1,5 +1,5 @@
 html {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Basic reset */
@@ -7,11 +7,13 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1.6rem;
+  line-height: 2rem;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "raleway", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   min-width: 385px;
   max-width: 1000px;
   margin: auto;
@@ -20,7 +22,9 @@ body {
 h1 {
   font-size: 3rem;
   margin: 1rem 1rem 1rem 0;
-  font-family: "Brush Script MT";
+  font-family: "raleway", sans-serif;
+  font-weight: 700;
+  min-width: 210px;
 }
 
 h2 {
@@ -186,7 +190,7 @@ li ul {
 /* Small devices (phones) */
 @media only screen and (max-width: 450px) {
   html {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .main-content {
@@ -197,19 +201,19 @@ li ul {
 /* Medium devices (tablets) */
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   html {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
 /* Large devices (laptops/desktops) */
 @media only screen and (min-width: 1024px) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
