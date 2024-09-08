@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Dev Diary | Ryan Atkinson</title>
-    <link href="./resources/css/style.css?v=3" rel="stylesheet" />
-    <link href="./resources/css/home.css?v=3" rel="stylesheet" />
+    <link href="./resources/css/style.css?v=3.1" rel="stylesheet" />
+    <link href="./resources/css/home.css?v=3.1" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.typekit.net/kft6blj.css">
   </head>
   <body>
@@ -35,10 +35,10 @@
         <h2 class="centre home-section">Welcome to my portfolio website</h2>
         <div class="profile-container">
           <div class="profiles home-section">
-            <h3>
+            <h5>
               Before we get started you can find my other pages here if you
               would like to know more information
-            </h3>
+            </h5>
             <ul>
               <li>
                 <a href="https://www.linkedin.com/in/ryan-atkinson-804a5b1a8/"
@@ -49,7 +49,8 @@
             </ul>
           </div>
         </div>
-        <div class="about-me home-section">
+        <button id="aboutButton" class="button">More About Me</button>
+        <div id="aboutMeSection" class="about-me home-section" style="display: none;">
           <div class="about-me-myself">
             <h3>A little about myself</h3>
             <p>
@@ -117,9 +118,18 @@
             </ul>
           </div>
         </div>
-        <div class="projects-container">
-          <h3 class="centre home-section">Check out my projects</h3>
-          <div class="project project-grid home-section">
+        <button id="projectsButton" class="button">More Projects</button>
+        <div id="projectsSection" class="projects-container" style="display: none;">
+          <h3 class="centre home-section" style="display: none;">Check out my projects</h3>
+          <div class="project-buttons">
+            <ul>
+                <li><button id="project1Button" class="button">Full-Stack App</button></li>
+                <li><button id="project2Button" class="button">This Website</button></li>
+                <li><button id="project3Button" class="button">C++ Game</button></li>
+                <li><button id="project4Button" class="button">Random Message</button></li>
+            </ul>
+          </div>
+          <div id="project1Section" class="project project-grid home-section" style="display: none;">
             <div class="grid-item title">
               <h4>FishConnect: React/Django Full-Stack Application</h4>
             </div>
@@ -198,7 +208,7 @@
               </p>
             </div>
           </div>
-          <div class="project project-grid home-section">
+          <div id="project2Section" class="project project-grid home-section" style="display: none;">
             <div class="grid-item title">
               <h4>This Portfolio Website</h4>
             </div>
@@ -252,7 +262,7 @@
               </p>
             </div>
           </div>
-          <div class="project project-grid home-section">
+          <div id="project3Section" class="project project-grid home-section" style="display: none;">
             <div class="grid-item title">
               <h4>C++ Text Game</h4>
             </div>
@@ -304,7 +314,7 @@
               </p>
             </div>
           </div>
-          <div class="project project-grid home-section">
+          <div id="project4Section" class="project project-grid home-section" style="display: none;">
             <div class="grid-item title">
               <h4>Random Inspirational Quote Generator</h4>
             </div>
@@ -368,5 +378,6 @@
         </ul>
       </footer>
     </div>
+    <script src="./resources/scripts/homeScript.js"></script>
   </body>
 </html>

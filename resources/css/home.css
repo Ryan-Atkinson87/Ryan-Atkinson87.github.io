@@ -4,7 +4,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vh;
 }
 
 /* Specific CSS for iOS to handle background attachment */
@@ -24,6 +23,7 @@
   justify-content: center;
   list-style: none;
   margin: auto;
+  padding: 0;
 }
 
 .profiles ul li {
@@ -75,7 +75,7 @@
 }
 
 .about-me-colab {
-  grid-area: 3 / 3 / span 1 / span 1;
+  grid-area: 4 / 3 / span 1 / span 1;
 }
 
 .home-section {
@@ -131,6 +131,37 @@
 
 .grid-item p {
   margin-bottom: 0;
+}
+
+.button {
+  width: 25%;
+  height: 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+button:hover {
+  background-color: grey;
+  opacity: 0.9;
+  border: solid 0.125rem black;
+
+}
+
+.project-buttons ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+}
+
+.project-buttons .button {
+  width: 12rem;
+  margin: 0;
 }
 
 @media only screen and (max-width: 450px) {
