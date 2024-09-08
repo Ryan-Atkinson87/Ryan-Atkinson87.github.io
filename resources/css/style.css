@@ -17,6 +17,7 @@ body {
   min-width: 385px;
   max-width: 1000px;
   margin: auto;
+  min-height: 100vh;
 }
 
 h1 {
@@ -176,7 +177,6 @@ li ul {
   border-radius: 8px;
   margin: 0 1.25rem;
   border: solid 0.1rem black;
-  width: 15rem;
   text-align: center;
 }
 

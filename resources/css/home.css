@@ -33,7 +33,7 @@
 
 .profiles ul li a {
   color: black;
-  border: solid 0.0625rem grey;
+  border: solid 0.0625rem black;
   border-radius: 0.5rem;
   padding: 0.25rem 2rem;
   text-decoration: none;
@@ -75,7 +75,7 @@
 }
 
 .about-me-colab {
-  grid-area: 4 / 3 / span 1 / span 1;
+  grid-area: 3 / 3 / span 1 / span 1;
 }
 
 .home-section {
@@ -139,7 +139,6 @@
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 1.2rem;
-  font-weight: bold;
   margin-bottom: 1rem;
   margin-right: 1rem;
 }
@@ -151,17 +150,20 @@ button:hover {
 
 }
 
-.project-buttons ul {
-  list-style: none;
+.project-buttons {
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 0;
+  margin-bottom: 1rem;
 }
 
-.project-buttons .button {
-  width: 12rem;
+.project-buttons button {
   margin: 0;
+  font-size: 1rem;
+  min-width: 20%;
+  height: auto;
 }
 
 @media only screen and (max-width: 450px) {
