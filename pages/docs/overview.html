@@ -1,113 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trive AquaSense Docs</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="../../resources/css/style.css" rel="stylesheet" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trive AquaSense Docs</title>
 
-  <body>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../resources/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container py-5">
     <!-- Navbar -->
-    <div class="container py-5">
-      <nav
-        class="navbar navbar-expand-lg navbar-light bg-light border-bottom mb-5"
-      >
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="../../index.html">Ryan Atkinson</a>
-          <span class="text-muted ms-2">Software Developer</span>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-navbar mb-5">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../../index.html">Ryan Atkinson</a>
+        <span class="text-muted ms-2">Software Developer</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNav"
-          >
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="./pages/docs/docs.html"
-                  >Trive AquaSense Docs</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="mailto:atkinson.ryan87@gmail.com"
-                  >Email</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://github.com/Ryan-Atkinson87"
-                  target="_blank"
-                  >GitHub</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://www.linkedin.com/in/ryan-atkinson-804a5b1a8/"
-                  target="_blank"
-                  >LinkedIn</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Layout: Sidebar + Content -->
-      <div class="row">
-        
-        <!-- Sidebar -->
-        <div class="col-md-3 mb-4">
-          <div class="list-group sticky-top">
-            <a href="docs.html" class="list-group-item list-group-item-action">
-              Docs Home
-            </a>
-            <a href="overview.html" class="list-group-item list-group-item-action active">Overview</a>
-            <a href="setup.html" class="list-group-item list-group-item-action">Setup and Installation</a>
-            <a href="architecture.html" class="list-group-item list-group-item-action">Architecture</a>
-            <a href="sensors.html" class="list-group-item list-group-item-action">Sensors</a>
-            <a href="telemetry.html" class="list-group-item list-group-item-action">Telemetry</a>
-            <a href="deployment.html" class="list-group-item list-group-item-action">Deployment</a>
-          </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="col-md-9">
-          <h1 class="mb-4">Trive AquaSense Documentation</h1>
-          <p class="lead">
-            Complete documentation for the Trive AquaSense service. Covers installation, sensors, telemetry pipelines, device architecture and deployment.
-          </p>
-
-          <hr />
-
-          <h2>Overview</h2>
-
-          <hr />
-
-          <p>Overview Content</p>
-
-          <hr />
-
-          <p class="text-muted small">
-            © 2025 Ryan Atkinson
-          </p>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./pages/docs/docs.html">Trive AquaSense Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:atkinson.ryan87@gmail.com">Email</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/Ryan-Atkinson87" target="_blank">GitHub</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/ryan-atkinson-804a5b1a8/"
+                target="_blank">LinkedIn</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    <!-- Layout: Sidebar + Content -->
+    <div class="row">
+
+      <!-- Sidebar -->
+      <div class="col-md-3 mb-4">
+        <div class="list-group sticky-sidebar">
+          <a href="docs.html" class="list-group-item list-group-item-action">
+            Docs Home
+          </a>
+          <a href="overview.html" class="list-group-item list-group-item-action active">Overview</a>
+          <a href="setup.html" class="list-group-item list-group-item-action">Setup and Installation</a>
+          <a href="architecture.html" class="list-group-item list-group-item-action">Architecture</a>
+          <a href="sensors.html" class="list-group-item list-group-item-action">Sensors</a>
+          <a href="telemetry.html" class="list-group-item list-group-item-action">Telemetry</a>
+          <a href="deployment.html" class="list-group-item list-group-item-action">Deployment</a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <h1 class="mb-4">Trive AquaSense Documentation</h1>
+        <p class="lead">
+          High level explanation of Trive AquaSense, its purpose, capabilities and design goals. Includes architectural
+          philosophy and feature summary.
+        </p>
+
+        <hr />
+
+        <h2>Overview</h2>
+
+        <p class="lead">
+          Trive AquaSense is a modular Raspberry Pi based monitoring service designed to collect telemetry from
+          environmental sensors and push the data to ThingsBoard. The system prioritises modularity, reliability, easy
+          configuration and production grade behaviour.
+        </p>
+
+        <h3>Core Features</h3>
+        <ul>
+          <li>Pluggable sensor drivers with a consistent interface</li>
+          <li>Config driven sensor loading using config.json</li>
+          <li>Robust telemetry collector with retries and per sensor intervals</li>
+          <li>MQTT or HTTP transport via a ThingsBoard client wrapper</li>
+          <li>Rotating file logs and structured error handling</li>
+          <li>Systemd service for resilient deployment on Raspberry Pi</li>
+        </ul>
+
+        <h3>Project Goals</h3>
+        <ul>
+          <li>Support new sensors without modifying core logic</li>
+          <li>Provide a clean module layout for long term maintenance</li>
+          <li>Handle network problems through safe reconnect logic</li>
+          <li>Ensure telemetry accuracy through backoff and retry rules</li>
+          <li>Expose canonical telemetry keys for all sensors</li>
+        </ul>
+
+        <h3>Repository Structure</h3>
+        <pre class="code-block">
+monitoring_service/
+  sensors/
+  telemetry.py
+  TBClientWrapper.py
+  config_loader.py
+  attributes.py
+  logging_setup.py
+  agent.py
+tests/
+docs/
+</pre>
+
+        <p>
+          This page provides the high level context. The remaining sections dive deeper into setup, sensors, telemetry
+          flow and deployment.
+        </p>
+
+
+        <p class="text-muted small">
+          © 2025 Ryan Atkinson
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
