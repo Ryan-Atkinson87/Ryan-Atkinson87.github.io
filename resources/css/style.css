@@ -1,6 +1,6 @@
 body {
   background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card {
@@ -14,4 +14,47 @@ body {
 .modal-body {
   white-space: pre-wrap;
   font-size: 1rem;
+}
+
+.navbar-nav .nav-item + .nav-item .nav-link::before {
+  content: " | ";
+  display: inline-block;
+  padding: 0 0.35rem;
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 400;
+}
+
+.navbar-dark .navbar-nav .nav-item + .nav-item .nav-link::before {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.code-block {
+  color: beige;
+  background: #0e1012;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dee2e6;
+  font-family: monospace;
+  white-space: pre;
+  display: block;
+}
+
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background-color: #f8f9fa;
+}
+
+.sticky-sidebar {
+  position: sticky;
+  top: 80px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item + .nav-item .nav-link::before {
+    content: "";
+    padding: 0;
+  }
 }

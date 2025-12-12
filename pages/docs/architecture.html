@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trive AquaSense Docs</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../resources/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="container py-5">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-navbar mb-5">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../../index.html">Ryan Atkinson</a>
+        <span class="text-muted ms-2">Software Developer</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./pages/docs/docs.html">Trive AquaSense Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:atkinson.ryan87@gmail.com">Email</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/Ryan-Atkinson87" target="_blank">GitHub</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/ryan-atkinson-804a5b1a8/"
+                target="_blank">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Layout: Sidebar + Content -->
+    <div class="row">
+
+      <!-- Sidebar -->
+      <div class="col-md-3 mb-4">
+        <div class="list-group sticky-sidebar">
+          <a href="docs.html" class="list-group-item list-group-item-action">
+            Docs Home
+          </a>
+          <a href="overview.html" class="list-group-item list-group-item-action">Overview</a>
+          <a href="setup.html" class="list-group-item list-group-item-action">Setup and Installation</a>
+          <a href="architecture.html" class="list-group-item list-group-item-action active">Architecture</a>
+          <a href="sensors.html" class="list-group-item list-group-item-action">Sensors</a>
+          <a href="telemetry.html" class="list-group-item list-group-item-action">Telemetry</a>
+          <a href="deployment.html" class="list-group-item list-group-item-action">Deployment</a>
+          <a href="data_model.html" class="list-group-item list-group-item-action">Data Model</a>
+          <a href="troubleshooting.html" class="list-group-item list-group-item-action">Troubleshooting</a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <h1 class="mb-4">Trive AquaSense Documentation</h1>
+        <p class="lead">
+          Explains the core module layout, class responsibilities and internal architecture. Includes sensor interfaces,
+          factory logic, telemetry scheduling and client interactions. </p>
+
+        <hr />
+
+        <h2>Architecture</h2>
+
+        <p class="lead">
+          The architecture is modular and splits responsibilities across well defined packages. This page explains how
+          the internal components cooperate.
+        </p>
+
+        <h3>High Level Diagram</h3>
+        <pre class="code-block">
+config_loader   -> loads .env and config.json
+attributes      -> gathers device metadata
+sensors.factory -> builds sensor objects
+telemetry       -> schedules reads and publishes data
+TBClientWrapper -> MQTT client for ThingsBoard
+logging_setup   -> central logging config
+agent.py        -> orchestrates startup and loop
+</pre>
+
+        <h3>Sensor Layer</h3>
+        <ul>
+          <li>Each sensor extends BaseSensor in sensors/base.py</li>
+          <li>Implements read() returning canonical telemetry dict</li>
+          <li>Optional GPIO or I2C validation via _check_pin()</li>
+        </ul>
+
+        <h3>Factory Layer</h3>
+        <p>Located in <code>sensors/factory.py</code>:</p>
+        <ul>
+          <li>Validates sensor IDs and types</li>
+          <li>Instantiates correct class based on config</li>
+          <li>Ensures safe defaults and explicit errors</li>
+        </ul>
+
+        <h3>Telemetry Collector</h3>
+        <ul>
+          <li>Manages per sensor intervals</li>
+          <li>Retries failed reads with exponential backoff</li>
+          <li>Formats ThingsBoard telemetry payloads</li>
+          <li>Hands off transport to client wrapper</li>
+        </ul>
+
+        <h3>Client Layer</h3>
+        <p><code>TBClientWrapper.py</code>:</p>
+        <ul>
+          <li>MQTT transport</li>
+          <li>Auto reconnect handling</li>
+          <li>Sends device attributes on connect</li>
+        </ul>
+
+        <h3>Logging</h3>
+        <ul>
+          <li>RotatingFileHandler</li>
+          <li>Configurable log level</li>
+          <li>Timestamps and module labels</li>
+        </ul>
+
+
+        <p class="text-muted small">
+          © 2025 Ryan Atkinson
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
