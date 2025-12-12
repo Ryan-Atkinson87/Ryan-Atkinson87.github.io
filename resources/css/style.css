@@ -1,6 +1,6 @@
 body {
   background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card {
@@ -21,12 +21,12 @@ body {
   display: inline-block;
   padding: 0 0.35rem;
   vertical-align: middle;
-  color: rgba(0,0,0,0.45);
+  color: rgba(0, 0, 0, 0.45);
   font-weight: 400;
 }
 
 .navbar-dark .navbar-nav .nav-item + .nav-item .nav-link::before {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .code-block {

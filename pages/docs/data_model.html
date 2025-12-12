@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
   <div class="container py-5">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-navbar mb-5">
@@ -55,9 +54,9 @@
           <a href="setup.html" class="list-group-item list-group-item-action">Setup and Installation</a>
           <a href="architecture.html" class="list-group-item list-group-item-action">Architecture</a>
           <a href="sensors.html" class="list-group-item list-group-item-action">Sensors</a>
-          <a href="telemetry.html" class="list-group-item list-group-item-action active">Telemetry</a>
+          <a href="telemetry.html" class="list-group-item list-group-item-action">Telemetry</a>
           <a href="deployment.html" class="list-group-item list-group-item-action">Deployment</a>
-          <a href="data_model.html" class="list-group-item list-group-item-action">Data Model</a>
+          <a href="data_model.html" class="list-group-item list-group-item-action active">Data Model</a>
           <a href="troubleshooting.html" class="list-group-item list-group-item-action">Troubleshooting</a>
         </div>
       </div>
@@ -66,48 +65,98 @@
       <div class="col-md-9">
         <h1 class="mb-4">Trive AquaSense Documentation</h1>
         <p class="lead">
-          Explains the telemetry scheduler, read intervals, retries, backoff logic and ThingsBoard formatting for
-          outbound messages. </p>
+          Complete documentation for the Trive AquaSense service. Covers installation, sensors, telemetry pipelines,
+          device architecture and deployment.
+        </p>
 
         <hr />
 
-        <h2>Telemetry</h2>
-
+        <h2>Data Model</h2>
         <p class="lead">
-          The telemetry pipeline manages timed reads, error retries, backoff logic and forwarding of telemetry to
-          ThingsBoard.
+          This page defines all canonical telemetry keys used by Trive AquaSense. Each sensor driver returns a
+          dictionary of values using consistent names and units. The telemetry collector forwards these values unchanged
+          to ThingsBoard.
         </p>
 
-        <h3>Telemetry Responsibilities</h3>
-        <ul>
-          <li>Enforce per sensor intervals</li>
-          <li>Retry read failures</li>
-          <li>Apply exponential backoff</li>
-          <li>Publish via MQTT or HTTP</li>
-        </ul>
+        <hr>
 
-        <h3>Payload Example</h3>
+        <h2>Telemetry Structure</h2>
+
+        <p>Every message sent to ThingsBoard follows this structure:</p>
+
         <pre class="code-block">
 {
   "ts": 1730022000000,
   "values": {
-    "cpu_usage": 23.7,
-    "cpu_temp_c": 51.2
+    "air_temperature": 24.1,
+    "air_humidity": 52.3
   }
 }
 </pre>
 
-        <h3>Attributes Sent on Startup</h3>
+        <p><strong>ts</strong> is always a UTC timestamp in milliseconds.
+          <strong>values</strong> is the flattened telemetry dictionary produced by the sensor.
+        </p>
+
+        <hr>
+
+        <h2>Canonical Telemetry Keys</h2>
+
+        <h3>DHT22</h3>
         <ul>
-          <li>hostname</li>
-          <li>mac_address</li>
-          <li>ip_address</li>
-          <li>device_name</li>
+          <li><strong>air_temperature</strong> — Degrees Celsius, float</li>
+          <li><strong>air_humidity</strong> — Percent relative humidity, float</li>
         </ul>
 
-        <h3>Error Handling</h3>
-        <p>Domain specific exceptions with no bare except blocks.</p>
+        <h3>DS18B20 (1-Wire Temperature)</h3>
+        <ul>
+          <li><strong>water_temperature</strong> — Degrees Celsius, float</li>
+        </ul>
 
+        <h3>Water Flow Sensor</h3>
+        <ul>
+          <li><strong>flow_instant</strong> — Instant flow rate in liters per minute, float</li>
+          <li><strong>flow_smoothed</strong> — Short term smoothed average, float</li>
+        </ul>
+
+        <hr>
+
+        <h2>Attributes</h2>
+        <p>Attributes are sent on startup or reconnect and describe the device.</p>
+
+        <ul>
+          <li><strong>ip_address</strong></li>
+          <li><strong>mac_address</strong></li>
+          <li><strong>device_name</strong> — From config.json</li>
+        </ul>
+
+        <hr>
+
+        <h2>Example Sensor Payloads</h2>
+
+        <h3>DHT22 Example</h3>
+        <pre class="code-block">
+{
+  "ts": 1730022100000,
+  "values": {
+    "air_temperature": 23.9,
+    "air_humidity": 54.1
+  }
+}
+</pre>
+
+        <h3>Water Flow Example</h3>
+        <pre class="code-block">
+{
+  "ts": 1730022105000,
+  "values": {
+    "flow_instant": 1.24,
+    "flow_smoothed": 1.18,
+  }
+}
+</pre>
+
+        <hr>
 
         <p class="text-muted small">
           © 2025 Ryan Atkinson
