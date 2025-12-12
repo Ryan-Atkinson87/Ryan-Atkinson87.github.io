@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trive AquaSense Docs</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../resources/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container py-5">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-navbar mb-5">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../../index.html">Ryan Atkinson</a>
+        <span class="text-muted ms-2">Software Developer</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./pages/docs/docs.html">Trive AquaSense Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:atkinson.ryan87@gmail.com">Email</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/Ryan-Atkinson87" target="_blank">GitHub</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/ryan-atkinson-804a5b1a8/"
+                target="_blank">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Layout: Sidebar + Content -->
+    <div class="row">
+
+      <!-- Sidebar -->
+      <div class="col-md-3 mb-4">
+        <div class="list-group sticky-sidebar">
+          <a href="docs.html" class="list-group-item list-group-item-action">
+            Docs Home
+          </a>
+          <a href="overview.html" class="list-group-item list-group-item-action">Overview</a>
+          <a href="setup.html" class="list-group-item list-group-item-action">Setup and Installation</a>
+          <a href="architecture.html" class="list-group-item list-group-item-action">Architecture</a>
+          <a href="sensors.html" class="list-group-item list-group-item-action">Sensors</a>
+          <a href="telemetry.html" class="list-group-item list-group-item-action">Telemetry</a>
+          <a href="deployment.html" class="list-group-item list-group-item-action">Deployment</a>
+          <a href="data_model.html" class="list-group-item list-group-item-action">Data Model</a>
+          <a href="troubleshooting.html" class="list-group-item list-group-item-action active">Troubleshooting</a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <h1 class="mb-4">Trive AquaSense Documentation</h1>
+        <p class="lead">
+          Complete documentation for the Trive AquaSense service. Covers installation, sensors, telemetry pipelines,
+          device architecture and deployment.
+        </p>
+
+        <hr />
+
+        <h2>Troubleshooting</h2>
+        <p class="lead">
+          This page covers common problems seen during development and deployment of Trive AquaSense, along with likely
+          causes and fixes. All issues listed here are based on real failures observed during v2.1.0 development and
+          Raspberry Pi testing.
+        </p>
+
+        <hr>
+
+        <h2>DHT22 Issues</h2>
+
+        <h4>DHT22 shows random None or checksum errors</h4>
+        <ul>
+          <li>Cause: Natural behaviour of DHT sensors when timing is slightly off.</li>
+          <li>Fix: The driver already retries automatically. Occasional errors are normal.</li>
+        </ul>
+
+        <h4>DHT22 never returns data</h4>
+        <ul>
+          <li>GPIO pin mismatch</li>
+          <li>3.3v supply not stable</li>
+          <li>Missing pull-up resistor between data and 3.3v</li>
+        </ul>
+
+        <hr>
+
+        <h2>DS18B20 Issues</h2>
+
+        <h4>File not found under /sys/bus/w1/devices</h4>
+        <ul>
+          <li>1-Wire interface not enabled</li>
+          <li>Run
+            <pre class="code-block">sudo raspi-config</pre> and enable 1-Wire.
+          </li>
+        </ul>
+
+        <h4>DS18B20 reports -127 or 85</h4>
+        <ul>
+          <li>Signal cable too long or noisy</li>
+          <li>Bad power or insufficient pull-up</li>
+        </ul>
+
+        <hr>
+
+        <h2>Water Flow Sensor Issues</h2>
+
+        <h4>Error: pigpio not running</h4>
+        <pre class="code-block">
+Error: module 'pigpio' has no attribute 'tick'
+</pre>
+
+        <ul>
+          <li>pigpio daemon must be running:</li>
+        </ul>
+
+        <pre class="code-block">
+sudo systemctl start pigpiod
+sudo systemctl enable pigpiod
+</pre>
+
+        <h4>Flow always reads 0</h4>
+        <ul>
+          <li>Sensor not receiving water flow</li>
+          <li>Wrong GPIO pin</li>
+          <li>Pulses too low for your interval (lower the interval or pump speed)</li>
+        </ul>
+
+        <hr>
+
+        <h2>Systemd Service Problems</h2>
+
+        <h4>Service starts manually but fails under systemd</h4>
+        <ul>
+          <li>Wrong working directory</li>
+          <li>Venv path not correct</li>
+          <li>.env or config.json not found because systemd uses a different cwd</li>
+        </ul>
+
+        Fix by setting <strong>WorkingDirectory=</strong> in the service file.
+
+        <h4>Service restarts repeatedly</h4>
+        <ul>
+          <li>Uncaught exception in agent.py</li>
+          <li>Bad sensor configuration (wrong type or pin)</li>
+        </ul>
+
+        Check logs:
+
+        <pre class="code-block">
+sudo journalctl -u mqtt_aquarium_monitoring -n 50
+</pre>
+
+        <hr>
+
+        <h2>MQTT / ThingsBoard Errors</h2>
+
+        <h4>MQTT cannot connect</h4>
+        <ul>
+          <li>Wrong ACCESS_TOKEN in .env</li>
+          <li>Firewall blocking outbound port 1883</li>
+          <li>ThingsBoard server unreachable</li>
+        </ul>
+
+        <h4>No telemetry in ThingsBoard</h4>
+        <ul>
+          <li>Sensor interval too long</li>
+          <li>No values returned from read()</li>
+          <li>Device not authenticated</li>
+        </ul>
+
+        <hr>
+
+        <h2>General Python Issues</h2>
+
+        <h4>ImportError on psutil</h4>
+        <ul>
+          <li>Virtual environment not activated</li>
+          <li>Forgot to install requirements</li>
+        </ul>
+
+        <h4>AttributeError in custom sensors</h4>
+        <ul>
+          <li>New sensor not registered in factory</li>
+        </ul>
+
+        <hr>
+
+        <p class="text-muted small">
+          © 2025 Ryan Atkinson
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
